@@ -28,6 +28,9 @@ import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import styles from './styles.module.css'
 
+import { DiscussionEmbed } from 'disqus-react';
+
+
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
 // -----------------------------------------------------------------------------
@@ -80,6 +83,7 @@ const Collection = dynamic(() =>
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
 )
+
 const Pdf = dynamic(
   () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
   {
@@ -165,7 +169,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
       propertyLastEditedTimeValue,
       propertyTextValue,
       propertyDateValue
-    }),
+      }),
     []
   )
 
@@ -242,6 +246,17 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
+  const disqus = <DiscussionEmbed
+    className='disqusComments'
+    shortname='yerazesdomain'
+    config={
+        {
+            url: {canonicalPageUrl},
+            title: {title}
+        }
+    }
+  />
+
   return (
     <>
       <PageHead
@@ -278,10 +293,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
+        pageFooter={pageId === site.rootNotionPageId ? null : disqus}
         footer={footer}
       />
-
-      <GitHubShareButton />
     </>
   )
 }
