@@ -204,17 +204,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
-  const canonicalPageUrl =
-    !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
-  const title = getBlockTitle(block, recordMap) || site.name
-
-  const disqus = React.useMemo(() => <DiscussionEmbed
-    shortname='yerazesdomain'
-    config={ {
-      url: canonicalPageUrl,
-      title: title
-    } }
-  />, [canonicalPageUrl, title])
 
   if (router.isFallback) {
     return <Loading />
@@ -224,6 +213,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
     return <Page404 site={site} pageId={pageId} error={error} />
   }
 
+  const canonicalPageUrl =
+    !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
+  const title = getBlockTitle(block, recordMap) || site.name
 
   console.log('notion page', {
     isDev: config.isDev,
@@ -241,8 +233,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
     g.block = block
   }
 
- 
-
   const socialImage = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
       (block as PageBlock).format?.page_cover ||
@@ -255,6 +245,13 @@ export const NotionPage: React.FC<types.PageProps> = ({
     config.description
 
 
+  const disqus =<DiscussionEmbed
+    shortname='yerazesdomain'
+    config={ {
+      url: canonicalPageUrl,
+      title: title
+    } }
+  />
 
   return (
     <>

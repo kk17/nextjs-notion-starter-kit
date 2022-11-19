@@ -40,6 +40,6 @@ body {
 }
 
 
-.disqusComments {
+#disqus_thread {
   width:  100%;
 }
