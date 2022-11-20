@@ -10,10 +10,15 @@ import { getPage } from './notion'
 export async function resolveNotionPage(domain: string, rawPageId?: string) {
   let pageId: string
   let recordMap: ExtendedRecordMap
+    console.error(rawPageId)
 
   if (rawPageId && rawPageId !== 'index') {
-    pageId = parsePageId(rawPageId)
-
+    console.error(rawPageId.substring(0,5))
+    if (rawPageId.substring(0,5) === "post/") {
+      pageId = parsePageId(rawPageId.substring(6))
+    } else {
+      pageId = parsePageId(rawPageId)
+    }
     if (!pageId) {
       // check if the site configuration provides an override or a fallback for
       // the page's URI
