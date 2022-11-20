@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
 import posthog from 'posthog-js'
@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }
 
       if (googleAnalyticsId) {
-          ReactGA.pageview('$pageview')
+          ReactGA.send({hitType: 'pageview', page: '$pageview'})
       }
     }
 

@@ -48,7 +48,7 @@ export default siteConfig({
   // }
   pageUrlOverrides: null,
 
-  googleAnalyticsId: 'UA-274734-1',
+  googleAnalyticsId: 'G-XMZ2PCLR16',
 
   disqusShortname: 'yerazesdomain',
 
