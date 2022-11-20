@@ -48,6 +48,10 @@ export default siteConfig({
   // }
   pageUrlOverrides: null,
 
+  googleAnalyticsId: 'UA-274734-1',
+
+  disqusShortname: 'yerazesdomain',
+
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
   navigationStyle: 'default'

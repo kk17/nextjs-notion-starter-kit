@@ -246,12 +246,13 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
 
   const disqus =<DiscussionEmbed
-    shortname='yerazesdomain'
+    shortname={config.disqusShortname}
     config={ {
       url: canonicalPageUrl,
       title: title
     } }
   />
+
 
   return (
     <>
@@ -289,7 +290,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
-        pageFooter={pageId === site.rootNotionPageId ? null : disqus}
+        pageFooter={pageId === site.rootNotionPageId ? null : (config.disqusShortname ? disqus : null)}
         footer={footer}
       />
     </>
