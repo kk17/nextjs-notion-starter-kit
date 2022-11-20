@@ -18,6 +18,9 @@ export interface SiteConfig {
   zhihu?: string
   mastodon?: string;
 
+  googleAnalyticsId?: string | null
+  disqusShortname?: string | null
+
   defaultPageIcon?: string | null
   defaultPageCover?: string | null
   defaultPageCoverPosition?: number | null

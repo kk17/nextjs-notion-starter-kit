@@ -109,6 +109,9 @@ export const navigationLinks: Array<NavigationLink | null> = getSiteConfig(
   null
 )
 
+export const googleAnalyticsId : string | null = getSiteConfig('googleAnalyticsId', null)
+export const disqusShortname : string | null = getSiteConfig('disqusShortname', null)
+
 // Optional site search
 export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', true)
 
@@ -166,6 +169,8 @@ export const fathomConfig = fathomId
       excludedDomains: ['localhost', 'localhost:3000']
     }
   : undefined
+
+
 
 export const posthogId = process.env.NEXT_PUBLIC_POSTHOG_ID
 export const posthogConfig: posthog.Config = {
