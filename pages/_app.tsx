@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }
 
       if (googleAnalyticsId) {
-          ReactGA.send({hitType: 'pageview', page: '$pageview'})
+          ReactGA.send("pageview")
       }
     }
 
@@ -61,6 +61,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }
 
     if (googleAnalyticsId) {
+      console.error('Initializing ReactGA')
       ReactGA.initialize( googleAnalyticsId)
     }
     router.events.on('routeChangeComplete', onRouteChangeComplete)
