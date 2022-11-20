@@ -54,16 +54,20 @@ export default siteConfig({
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
-  // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
+  // navigationStyle: 'default'
+  navigationStyle: 'custom',
+  navigationLinks: [
+    {
+      title: 'About',
+      pageId: '21c2452a42044fb3a82da2daa46ee4d4'
+    },
+    {
+      title: 'Patents',
+      pageId: '192b09bdb8fb42399ced70bcafb6a758'
+    },
+    {
+      title: 'Publications',
+      pageId: '2547e12d13924f26a69585f5822ecab2'
+    }
+  ]
 })
