@@ -248,7 +248,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const disqus =<DiscussionEmbed
     shortname={config.disqusShortname}
     config={ {
-      url: canonicalPageUrl,
+      url: (canonicalPageUrl ? canonicalPageUrl : ""),
       title: title
     } }
   />
