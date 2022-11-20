@@ -36,7 +36,10 @@ if (!isServer) {
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
-
+  if (googleAnalyticsId) {
+    ReactGA.initialize( googleAnalyticsId)
+    ReactGA.send("pageview")
+  }
   React.useEffect(() => {
     function onRouteChangeComplete() {
       if (fathomId) {
@@ -45,10 +48,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
       if (posthogId) {
         posthog.capture('$pageview')
-      }
-
-      if (googleAnalyticsId) {
-          ReactGA.send("pageview")
       }
     }
 
@@ -60,10 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
       posthog.init(posthogId, posthogConfig)
     }
 
-    if (googleAnalyticsId) {
-      console.error('Initializing ReactGA')
-      ReactGA.initialize( googleAnalyticsId)
-    }
+
     router.events.on('routeChangeComplete', onRouteChangeComplete)
 
     return () => {
