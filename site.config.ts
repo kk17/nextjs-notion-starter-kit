@@ -23,7 +23,7 @@ export default siteConfig({
   mastodon: 'https://indieweb.social/@Yeraze', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
-
+  privacyPolicy: '64f7bf74081041139f049af5f9b88017',
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
   defaultPageIcon: null,
