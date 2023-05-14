@@ -18,6 +18,8 @@ export default siteConfig({
   description: 'Personal site of Kyle Chen aka kk17',
 
   // social usernames (optional)
+  reddit: 'kk17forever',
+  youtube: '@_kk17_',
   twitter: '_kk17_',
   github: 'kk17',
   linkedin: 'kyle-ba7127116',
@@ -33,7 +35,7 @@ export default siteConfig({
   defaultPageCoverPosition: 0.5,
 
   // whether or not to enable support for LQIP preview images (optional)
-  isPreviewImageSupportEnabled: true,
+  isPreviewImageSupportEnabled: false,
 
   // whether or not redis is enabled for caching generated preview images (optional)
   // NOTE: if you enable redis, you need to set the `REDIS_HOST` and `REDIS_PASSWORD`
@@ -44,11 +46,11 @@ export default siteConfig({
   // any pages defined here will override their default URL paths
   // example:
   //
-  // pageUrlOverrides: {
-  //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
-  //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
-  // }
-  pageUrlOverrides: null,
+  pageUrlOverrides: {
+    '/gardender': '308a52c220c348a4b03a9d08ac1ac2e2',
+    '/coolcantonese': 'ce79837ad0b64007b050144dabc37e92'
+  },
+  // pageUrlOverrides: null,
 
   googleAnalyticsId: 'G-7LKLJTQBTQ',
 

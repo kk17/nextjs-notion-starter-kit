@@ -4,6 +4,7 @@ import { FaEnvelopeOpenText } from '@react-icons/all-files/fa/FaEnvelopeOpenText
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 import { FaMastodon } from '@react-icons/all-files/fa/FaMastodon'
+import { FaReddit } from '@react-icons/all-files/fa/FaReddit'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
@@ -62,8 +63,18 @@ export const FooterImpl: React.FC = () => {
           </a>
         )}
       </div>
-
       <div className={styles.social}>
+        {config.reddit && (
+          <a
+            className={styles.reddit}
+            href={`https://reddit.com/user/${config.reddit}`}
+            title={`Reddit @${config.reddit}`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <FaReddit />
+          </a>
+        )}
         {config.twitter && (
           <a
             className={styles.twitter}
