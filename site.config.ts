@@ -48,6 +48,7 @@ export default siteConfig({
   //
   pageUrlOverrides: {
     '/gardender': '308a52c220c348a4b03a9d08ac1ac2e2',
+    '/tech': 'e78163145c8f4a74ac583bf20db78122',
     '/coolcantonese': 'ce79837ad0b64007b050144dabc37e92'
   },
   // pageUrlOverrides: null,
