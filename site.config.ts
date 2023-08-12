@@ -22,7 +22,7 @@ export default siteConfig({
   youtube: '@_kk17_',
   twitter: '_kk17_',
   github: 'kk17',
-  linkedin: 'kyle-kk17',
+  linkedin: 'kk17',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
